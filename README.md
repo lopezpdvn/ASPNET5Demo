@@ -4,4 +4,10 @@ Demo web services.
 
 API calls:
 
-    /api/processes
+    GET /api/processes
+
+    GET /api/todo
+    GET /api/todo/{id}
+    POST /api/todo
+    PUT /api/todo/{id}
+    DELETE /api/todo/{id}

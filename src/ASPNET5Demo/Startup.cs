@@ -86,6 +86,8 @@ namespace ASPNET5Demo
             // Register application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            services.AddSingleton<ITodoRepository, TodoRepository>();
         }
 
         // Configure is called after ConfigureServices is called.
