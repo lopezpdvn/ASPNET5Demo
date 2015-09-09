@@ -1,7 +1,37 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "ASP.NET MVC demo";
 }
 <h2>@ViewData["Title"].</h2>
 <h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+<button id="listButton" class="btn btn-success">List Processes</button>
+<ul id="processList" class="list-group"></ul>
+
+@section scripts {
+    <script type="text/javascript">
+        function bindData(element, data) {
+            $('<li/>')
+                .addClass('list-group-item active')
+                .text('Processes')
+                .appendTo(element);
+            $.each(data, function (id, option) {
+                $('<li/>')
+                    .addClass('list-group-item')
+                    .text(option.Name)
+                    .appendTo(element);
+            });
+        }
+        $(document).ready(function () {
+            $("#listButton").bind("click", function (e) {
+                $.ajax({
+                    url: "/api/processes",
+                    data: "",
+                    type: "GET",
+                    success: function (data) {
+                        bindData($("#processList"), data);
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -15,7 +15,7 @@ namespace ASPNET5Demo.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Demo of ASP.NET web services with rich client side behavior.";
 
             return View();
         }
