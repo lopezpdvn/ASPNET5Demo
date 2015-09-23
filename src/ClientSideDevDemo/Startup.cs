@@ -6,7 +6,7 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
 
-namespace UsingGulp
+namespace ClientSideDevDemo
 {
     public class Startup
     {
